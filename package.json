@@ -9,7 +9,7 @@
   "scripts": {
     "prestart": "node zeby.js",
     "start": "node index.js",
-    "dev": "concurrently \"node index.js\" \"node zeby.js\""
+    "dev": "concurrently \"node index.js\" \"node zeby.js\" \"node keep_alive.js\""
   },
   "author": "Plex Development",
   "license": "ISC",
