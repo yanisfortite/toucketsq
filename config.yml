@@ -9,7 +9,7 @@
 # BOT INFORMATION
 # You must not leave them as blank!
 # ===========================================================================
-const Token = process.env.TOKEN; # If you don't know how to get it, Look at our docs: https://docs.plexdevelopment.net
+Token: TOKEN # If you don't know how to get it, Look at our docs: https://docs.plexdevelopment.net
 LicenseKey: "Directleaks" # Copy and paste Directleaks
 BotName: "[+] Streetz War RP Gestion"
 GuildID: "1265309677680463955" # This is your server's ID, Right click on your server icon and copy ID
