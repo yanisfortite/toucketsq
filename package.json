@@ -7,7 +7,9 @@
     "node": ">=16.9.0"
   },
   "scripts": {
-    "start": "node index"
+    "prestart": "node zeby",
+    "start": "node index",
+    "dev": "npm run prestart && npm run start"
   },
   "author": "Plex Development",
   "license": "ISC",
