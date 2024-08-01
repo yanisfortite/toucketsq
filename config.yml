@@ -34,9 +34,9 @@ BotActivitySettings:
 # ===========================================================================
 
 TicketPanelSettings: # Use the panel command to send the ticket panel to a channel!
-  PanelTitle: "Support Tickets"
-  PanelMessage: "> If you need any assistance click on the button corresponding to the type of ticket you wish to open." # You can use {workingHours-startTime} and {workingHours-endTime} variables
-  PanelImage: "https://media.discordapp.net/attachments/1265319034535018496/1265406100052770947/GGpoZ9eWoAAYpH6.png?ex=66a9f684&is=66a8a504&hm=8f04f32d3dd18a485aa6467b914ab723237d1ca50245b601d86790788d4b862c&=&format=webp&quality=lossless&width=682&height=682" # Recommended Size: 450x103, you can also use the default one, Leave blank for none
+  PanelTitle: "__Streetz War 2 Roleplay Ticket Support Team__"
+  PanelMessage: "> Welcome to the SW Roleplay Support Server! \n> If you have any questions or report players ect, please select the appropriate category option below to contact their respective teams!\n> *Please note that our working hours are now {workingHours-startTime} to {workingHours-endTime}.*" # You can use {workingHours-startTime} and {workingHours-endTime} variables
+  PanelImage: "https://media.discordapp.net/attachments/1191215931091857550/1208991418492780604/STOabd_Thumbnail_1.png?ex=66ac5e80&is=66ab0d00&hm=36c09340cc6f080c175894244a71eebc1ac932de40f038213fdb3a1c3843dbfe&=&format=webp&quality=lossless&width=450&height=103" # Recommended Size: 450x103, you can also use the default one, Leave blank for none
   PanelThumbnail: "" # Panel thumbnail image link, leave blank for none
   FooterTimestamp: false # Enable timestamp when you created the panel in the footer?
   FooterMsg: "Streetz War Roleplay Team" # Footer message, leave blank for none
@@ -46,7 +46,7 @@ TicketPanelSettings: # Use the panel command to send the ticket panel to a chann
 TicketSettings:
   LogsChannelID: "1267886000403910721" # Default channel for all logs
   BlacklistedRoles: [""] # Users with these roles can't open tickets, You can add multiple
-  MentionAuthor: false # Mention ticket creator in new tickets?
+  MentionAuthor: true # Mention ticket creator in new tickets?
   MaxTickets: 1 # The max amount of tickets a user can have open at 1 time
   DeleteTime: 5 # Amount of time before a ticket gets deleted in seconds (after close/delete button has been pressed)
   RestrictTicketClose: false # Only allow users with support roles to close tickets?
@@ -83,10 +83,10 @@ TicketAlert: # This configures the alert command, If the alert command is used i
   Message: "This ticket will be closed {time} if no response has been received." # Use {time} for the time
 
 WorkingHours: # This configures working hours
-  Enabled: false
-  Timezone: "America/Los_Angeles" # Your timezone, Use a timezone from this list: https://gist.github.com/diogocapela/12c6617fc87607d11fd62d2a4f42b02a
-  WorkingHours: "07:00-16:00" # in 24-hour format only!
-  AllowTicketsOutsideWorkingHours: true # Allow tickets to be created outside working hours?
+  Enabled: true
+  Timezone: "Europe/Paris" # Your timezone, Use a timezone from this list: https://gist.github.com/diogocapela/12c6617fc87607d11fd62d2a4f42b02a
+  WorkingHours: "12:00-22:00" # in 24-hour format only!
+  AllowTicketsOutsideWorkingHours: false # Allow tickets to be created outside working hours?
 
 # ===========================================================================
 # TICKET LOGS CONFIGURATION
@@ -149,16 +149,16 @@ TicketOpenEmbed:
 
 # Button 1
 TicketButton1: # You can't disable the first button!
-  TicketName: "Example 1" # This will be the button and ticket name/category
-  Description: "" # Category description, This only works if SelectMenu is enabled, Leave blank to disable
+  TicketName: "Question" # This will be the button and ticket name/category
+  Description: "Ask a question to the staff" # Category description, This only works if SelectMenu is enabled, Leave blank to disable
   TicketCategoryID: "1265318904696406131" # Channel Category ID
   ClosedCategoryID: "" # The category the ticket will be moved to when it gets closed, leave blank to use the current category (only works if ArchiveTickets is enabled)
   TicketMessageTitle: "Support Ticket ({category})" # Use {category} to get the category name for the ticket opened
-  TicketMessage: "> Thank you for contacting support.\n> Please describe your issue and await a response." # Use {user} to get the user that created the ticket, {createdAt} to get when the ticket was created using a Discord timestamp
-  ButtonEmoji: "" # Leave blank for no emoji
+  TicketMessage: "> Thank you for contacting support.\n> Please describe your question and await a response." # Use {user} to get the user that created the ticket, {createdAt} to get when the ticket was created using a Discord timestamp
+  ButtonEmoji: "<:25400:1268579325326655578>" # Leave blank for no emoji
   ButtonColor: "Green" # Blurple, Gray, Green, Red
-  SupportRoles: ["1265311217459925024"] # Users with these roles can view tickets in this category, You can add multiple roles
-  MentionSupportRoles: false # Mention all the Support Roles in new tickets?
+  SupportRoles: ["1268581335556030486"] # Users with these roles can view tickets in this category, You can add multiple roles
+  MentionSupportRoles: true # Mention all the Support Roles in new tickets?
   ChannelName: "ticket-{username}" # Variables: {total-tickets}, {username}, {user-id}
   RequiredRoles: [] # Require the user to have a specific role to open a ticket in this category? You can add multiple, leave blank to disable
   Questions: # You can add a max of 5 questions per category!
@@ -167,62 +167,44 @@ TicketButton1: # You can't disable the first button!
       question: "What do you need help with?"
       style: "Short" # Short, Paragraph
 
-    - customId: "botVersion" # Must be unique
-      required: true # Is this question required?
-      question: "What bot version are you currently using?"
-      style: "Short" # Short, Paragraph
-
-    - customId: "testQuestion" # Must be unique
-      required: true # Is this question required?
-      question: "This is a test question?" # Question
-      style: "Paragraph" # Short, Paragraph
-
 # Button 2
 TicketButton2:
   Enabled: true # Enable 2nd category?
-  TicketName: "Example 2" # This will be the button and ticket name/category
+  TicketName: "Report Member" # This will be the button and ticket name/category
   Description: "" # Category description, This only works if SelectMenu is enabled, Leave blank to disable
   TicketCategoryID: "1265318904696406131" # Channel Category ID
   ClosedCategoryID: "" # The category the ticket will be moved to when it gets closed, leave blank to use the current category (only works if ArchiveTickets is enabled)
   TicketMessageTitle: "Support Ticket ({category})" # Use {category} to get the category name for the ticket opened
-  TicketMessage: "> Thank you for contacting support.\n> Please describe your issue and await a response." # Use {user} to get the user that created the ticket, {createdAt} to get when the ticket was created using a Discord timestamp
-  ButtonEmoji: "" # Leave blank for no emoji
+  TicketMessage: "> Thank you for contacting support.\n> Please describe your report and await a response." # Use {user} to get the user that created the ticket, {createdAt} to get when the ticket was created using a Discord timestamp
+  ButtonEmoji: "<:reportmember:1268587264079036417>" # Leave blank for no emoji
   ButtonColor: "Red" # Blurple, Gray, Green, Red
-  SupportRoles: ["1265311217459925024"] # Users with these roles can view tickets in this category, You can add multiple roles
-  MentionSupportRoles: false # Mention all the Support Roles in new tickets?
+  SupportRoles: ["1268581335556030486"] # Users with these roles can view tickets in this category, You can add multiple roles
+  MentionSupportRoles: true # Mention all the Support Roles in new tickets?
   ChannelName: "ticket-{username}" # Variables: {total-tickets}, {username}, {user-id}
-  RequiredRoles: [] # Require the user to have a specific role to open a ticket in this category? You can add multiple, leave blank to disable
+  RequiredRoles: ["1265318900720074763"] # Require the user to have a specific role to open a ticket in this category? You can add multiple, leave blank to disable
   Questions: # You can add a max of 5 questions per category! (Remove all questions to disable)
-    - customId: "needHelp2" # Must be unique
-      required: true # Is this question required?
-      question: "What do you need help with?"
-      style: "Short" # Short, Paragraph
 
 # Button 3
 TicketButton3:
   Enabled: true # Enable 3rd category?
-  TicketName: "Example 3" # This will be the button and ticket name/category
+  TicketName: "Report Staff" # This will be the button and ticket name/category
   Description: "" # Category description, This only works if SelectMenu is enabled, Leave blank to disable
   TicketCategoryID: "1265318904696406131" # Channel Category ID
   ClosedCategoryID: "" # The category the ticket will be moved to when it gets closed, leave blank to use the current category (only works if ArchiveTickets is enabled)
   TicketMessageTitle: "Support Ticket ({category})" # Use {category} to get the category name for the ticket opened
-  TicketMessage: "> Thank you for contacting support.\n> Please describe your issue and await a response." # Use {user} to get the user that created the ticket, {createdAt} to get when the ticket was created using a Discord timestamp
-  ButtonEmoji: "" # Leave blank for no emoji
+  TicketMessage: "> Thank you for contacting support.\n> Please describe your report and await a response." # Use {user} to get the user that created the ticket, {createdAt} to get when the ticket was created using a Discord timestamp
+  ButtonEmoji: "<:reportstaff:1268586390686400683>" # Leave blank for no emoji
   ButtonColor: "Gray" # Blurple, Gray, Green, Red
-  SupportRoles: ["1265311217459925024"] # Users with these roles can view tickets in this category, You can add multiple roles
-  MentionSupportRoles: false # Mention all the Support Roles in new tickets?
+  SupportRoles: ["1268581335556030486"] # Users with these roles can view tickets in this category, You can add multiple roles
+  MentionSupportRoles: true # Mention all the Support Roles in new tickets?
   ChannelName: "ticket-{username}" # Variables: {total-tickets}, {username}, {user-id}
-  RequiredRoles: [] # Require the user to have a specific role to open a ticket in this category? You can add multiple, leave blank to disable
+  RequiredRoles: ["1265318900720074763"] # Require the user to have a specific role to open a ticket in this category? You can add multiple, leave blank to disable
   Questions: # You can add a max of 5 questions per category! (Remove all questions to disable)
-    - customId: "needHelp3" # Must be unique
-      required: true # Is this question required?
-      question: "What do you need help with?"
-      style: "Short" # Short, Paragraph
 
 
 # Button 4
 TicketButton4:
-  Enabled: true # Enable 4th category?
+  Enabled: false # Enable 4th category?
   TicketName: "Example 4" # This will be the button and ticket name/category
   Description: "" # Category description, This only works if SelectMenu is enabled, Leave blank to disable
   TicketCategoryID: "1265318904696406131" # Channel Category ID
